@@ -139,5 +139,6 @@ function displayForecast(forecast){
                     ${item.weather[0].description}
                 </p>
         `;
-    })
+        forecastList.appendChild(card);
+    });
 }
