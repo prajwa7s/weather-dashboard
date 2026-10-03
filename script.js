@@ -42,3 +42,27 @@ async function getForecast(city){
 }
 
 // Search weather
+async function searchWeather(city){
+    if(!city){
+        showError("Please enter a city name.");
+        return;
+    }
+    loading.style.display = "block";
+    weatherCard.style.display = "none";
+    errorMsg.style.display = "none";
+
+    try{
+        const weather = await getWeather(city);
+        const forecast = await getForecast(city);
+
+        displayWeather(weather);
+        displayForecast(forecast);
+
+    }
+    catch(error){
+        showError(error.message);
+    }
+    finally{
+        loading.style.display = "none";
+    }
+}
