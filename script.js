@@ -70,6 +70,7 @@ async function searchWeather(city){
 //Display current weather
 function displayWeather(weather){
     weatherCard.innerHTML = `
+
         <h2>${weather.city}</h2>
 
         <div class="temperature">
@@ -79,6 +80,7 @@ function displayWeather(weather){
         <p>${weather.description}</p>
 
         <div class="weather-info">
+
             <div class="info-box">
                 Feels Like: ${weather.feelsLike}°C
             </div>
@@ -92,8 +94,50 @@ function displayWeather(weather){
             </div>
 
         </div>
-        <button class="favorite-btn" onclick="addFavorite('${weather.city}')">⭐ Add to Favorites</button>
+
+        <button 
+            class="favorite-btn" 
+            onclick="addFavorite('${weather.city}')">
+            ⭐ Add to Favorites
+        </button>
         
         `;
         weatherCard.style.display = "block";
+}
+//Display 5 Day Forecast
+function displayForecast(forecast){
+    forecastList.innerHTML = "";
+    const days = {};
+     
+    forecast.forEach(item => {
+        const date = item.dt_txt.split(" ")[0];
+
+        if(!days[date]){
+            days[date] = item;
+
+        }
+    });
+    const dates = Object.keys(days).slice(0,5);
+    dates.forEach(date => {
+        const item = days[date];
+        const card = document.createElement("div");
+        card.className ="forecast-card";
+
+        card.innerHTML = `
+            <h3>${date}</h3>
+
+                <img
+                    src="https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png"
+                    alt="weather icon"
+                >
+
+                <p>
+                    ${Math.round(item.main.temp)}°C
+                </p>
+
+                <p>
+                    ${item.weather[0].description}
+                </p>
+        `;
+    })
 }
