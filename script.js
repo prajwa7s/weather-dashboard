@@ -66,3 +66,34 @@ async function searchWeather(city){
         loading.style.display = "none";
     }
 }
+
+//Display current weather
+function displayWeather(weather){
+    weatherCard.innerHTML = `
+        <h2>${weather.city}</h2>
+
+        <div class="temperature">
+            ${weather.temp}°C
+        </div>
+
+        <p>${weather.description}</p>
+
+        <div class="weather-info">
+            <div class="info-box">
+                Feels Like: ${weather.feelsLike}°C
+            </div>
+
+            <div class="info-box">
+                Humidity: ${weather.humidity}%
+            </div>
+
+            <div class="info-box">
+                Wind: ${weather.windSpeed} m/s
+            </div>
+
+        </div>
+        <button class="favorite-btn" onclick="addFavorite('${weather.city}')">⭐ Add to Favorites</button>
+        
+        `;
+        weatherCard.style.display = "block";
+}
