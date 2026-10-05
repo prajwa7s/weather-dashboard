@@ -156,6 +156,16 @@ function loadFavorites(){
     favorites.forEach(city => {
         const div = document.createElement("div");
         div.className = "favorite-item";
-        div.innerHTML = ``
-    })
+        div.innerHTML = `
+            <span>${city}</span>
+            <div>
+                <button onclick="searchWeather('${city}')">Search</button>
+
+                <button class="remove-btn" onclick="removeFavorite"('${city}')">Remove</button>
+
+            </div>
+                    
+        `;
+        favoritesList.appendChild(div);
+    });
 }
