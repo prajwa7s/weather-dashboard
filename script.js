@@ -227,3 +227,8 @@ cityInput.addEventListener("keydown", (event) =>{
         searchWeather(cityInput.value.trim());
     }
 });
+
+//Load favorites when page open
+document.addEventListener("DOMContentLoaded", ()=>{
+    loadFavorites();
+});
