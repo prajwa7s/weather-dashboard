@@ -218,3 +218,5 @@ searchBtn.addEventListener("click", ()=>{
     const city = cityInput.value.trim();
     searchWeather(city);
 });
+//Debounce input search
+cityInput.addEventListener("input",debounceSearch);
