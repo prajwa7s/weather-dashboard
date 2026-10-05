@@ -213,3 +213,8 @@ themeBtn.addEventListener("click", ()=>{
         themeBtn.textContent = "🌙 Dark";
     }
 })
+//Search button
+searchBtn.addEventListener("click", ()=>{
+    const city = cityInput.value.trim();
+    searchWeather(city);
+});
