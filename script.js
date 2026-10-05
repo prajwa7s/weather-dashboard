@@ -143,7 +143,7 @@ function displayForecast(forecast){
     });
 }
 //Add favorite
-async function addFavorite(city){
+function addFavorite(city){
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
     if(favorites.includes(city)){
         alert("City is already in favorites");

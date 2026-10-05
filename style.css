@@ -63,7 +63,7 @@ button:hover{
     border: 5px solid #ddd;
     border-top: 5px solid #2563eb;
     border-radius: 50%;
-    animation: spin 1s liner infinite;
+    animation: spin 1s linear infinite;
     margin: auto auto 10px;
 }
 @keyframes spin{
@@ -140,11 +140,11 @@ button:hover{
     margin-bottom: 8px;
 }
 /*Favorites*/
-.favorite-section{
+.favorites-section{
     margin-top: 30px;
 
 }
-.favorite-section h2{
+.favorites-section h2{
     margin-bottom: 15px;
 
 }
