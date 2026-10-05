@@ -169,3 +169,19 @@ function loadFavorites(){
         favoritesList.appendChild(div);
     });
 }
+
+//Remove favorite
+function removeFavorite(city){
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    favorites = favorites.filter(
+        favorite => favorite !== city
+    );
+    localStorage.setItem(
+        "favorites",
+        JSON.stringify(favorites)
+    );
+
+    loadFavorites();
+
+}
