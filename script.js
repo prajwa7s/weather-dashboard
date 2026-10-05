@@ -1,4 +1,4 @@
-const API_KEY = "";
+const API_KEY = "f6b62069368b27ab3dfc26e5ef15f373";
 
 //DOM elements
 const cityInput = document.getElementById("cityInput");
@@ -8,7 +8,7 @@ const forecastList = document.getElementById("forecastList");
 const loading = document.getElementById("loading");
 const errorMsg = document.getElementById("errorMsg");
 const favoritesList = document.getElementById("favoritesList");
-const themeBtn = document.getAnimations("themeBtn");
+const themeBtn = document.getElementById("themeBtn");
 
 //Get current weather
 async function getWeather(city){
@@ -142,10 +142,25 @@ function displayForecast(forecast){
         forecastList.appendChild(card);
     });
 }
+//Add favorite
+async function addFavorite(city){
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    if(favorites.includes(city)){
+        alert("City is already in favorites");
+        return;
+    }
+    favorites.push(city);
+    localStorage.setItem(
+        "favorites",
+        JSON.stringify(favorites)
+
+    )
+    loadFavorites();
+}
 //Load favorites
 function loadFavorites(){
     let favorites = 
-        JSON.parse(parse(localStorage.getItem("favorites")) || []);
+        JSON.parse(localStorage.getItem("favorites")) || [];
 
     favoritesList.innerHTML = "";
     if(favorites.length === 0){
@@ -161,7 +176,7 @@ function loadFavorites(){
             <div>
                 <button onclick="searchWeather('${city}')">Search</button>
 
-                <button class="remove-btn" onclick="removeFavorite"('${city}')">Remove</button>
+                <button class="remove-btn" onclick="removeFavorite('${city}')">Remove</button>
 
             </div>
                     
@@ -197,7 +212,7 @@ function debounceSearch(){
     clearTimeout(timer);
 
     timer = setTimeout(() => {
-        const city = cityInput.ariaValueMax.trim();
+        const city = cityInput.value.trim();
         searchWeather(city);
     },500);
 }
