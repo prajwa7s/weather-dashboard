@@ -220,3 +220,10 @@ searchBtn.addEventListener("click", ()=>{
 });
 //Debounce input search
 cityInput.addEventListener("input",debounceSearch);
+
+//Enter key
+cityInput.addEventListener("keydown", (event) =>{
+    if(event.key === "Enter"){
+        searchWeather(cityInput.value.trim());
+    }
+});
