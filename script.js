@@ -185,3 +185,9 @@ function removeFavorite(city){
     loadFavorites();
 
 }
+//Show error
+function showError(message){
+    errorMsg.textContent = message;
+    errorMsg.style.display = "block";
+    
+}
