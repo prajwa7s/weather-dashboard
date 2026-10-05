@@ -142,3 +142,20 @@ function displayForecast(forecast){
         forecastList.appendChild(card);
     });
 }
+//Load favorites
+function loadFavorites(){
+    let favorites = 
+        JSON.parse(parse(localStorage.getItem("favorites")) || []);
+
+    favoritesList.innerHTML = "";
+    if(favorites.length === 0){
+        favoritesList.innerHTML = 
+            "<p>No favorite cities yet.</p>";
+        return;
+    }
+    favorites.forEach(city => {
+        const div = document.createElement("div");
+        div.className = "favorite-item";
+        div.innerHTML = ``
+    })
+}
