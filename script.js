@@ -189,5 +189,15 @@ function removeFavorite(city){
 function showError(message){
     errorMsg.textContent = message;
     errorMsg.style.display = "block";
-    
+
+}
+//Debounce
+let timer;
+function debounceSearch(){
+    clearTimeout(timer);
+
+    timer = setTimeout(() => {
+        const city = cityInput.ariaValueMax.trim();
+        searchWeather(city);
+    },500);
 }
