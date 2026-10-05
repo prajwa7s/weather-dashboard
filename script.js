@@ -201,3 +201,15 @@ function debounceSearch(){
         searchWeather(city);
     },500);
 }
+//Theme toggle
+themeBtn.addEventListener("click", ()=>{
+    document.body.classList.toggle("dark");
+
+
+    if(document.body.classList.contains("dark")){
+        themeBtn.textContent = "☀️ Light";
+
+    }else{
+        themeBtn.textContent = "🌙 Dark";
+    }
+})
