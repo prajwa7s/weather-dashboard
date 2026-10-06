@@ -41,13 +41,19 @@ button:hover{
     opacity: 0.9;
 }
 /*Search*/
-.search-section{
+.search-section {
     display: flex;
     gap: 10px;
     margin-bottom: 25px;
-
 }
-.search-section input:focus{
+.search-section input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+.search-section input:focus {
     border-color: #2563eb;
 }
 /*Loading*/
