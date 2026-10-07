@@ -5,7 +5,7 @@
 }
 body{
     font-family: Arial, sans-serif;
-    background: #f0f2f5;
+    background: #d4ff90;
     color: #222;
     transition: 0.3s;
 
@@ -34,8 +34,8 @@ button{
     border-radius: 8px;
     cursor: pointer;
     font-size: 15px;
-    background: #2563eb;
-    color: white;
+    background: #20c070;
+    color: rgb(255, 255, 255);
 }
 button:hover{
     opacity: 0.9;
@@ -54,7 +54,7 @@ button:hover{
     outline: none;
 }
 .search-section input:focus {
-    border-color: #2563eb;
+    border-color:  #20c070;
 }
 /*Loading*/
 .loading{
@@ -67,7 +67,7 @@ button:hover{
     width: 40px;
     height: 40px;
     border: 5px solid #ddd;
-    border-top: 5px solid #2563eb;
+    border-top: 5px solid  #20c070;
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin: auto auto 10px;
